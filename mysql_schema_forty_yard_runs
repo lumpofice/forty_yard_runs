@@ -1,0 +1,98 @@
+CREATE SCHEMA forty_yard_runs
+DEFAULT CHARACTER SET utf8mb4;
+
+
+
+USE forty_yard_runs;
+
+
+
+
+CREATE TABLE `first_runs_year_21_22` (
+	`student_id`	INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	`student_name`	TEXT,
+	`run_time`	REAL,
+	`the_date`	TEXT NOT NULL DEFAULT '2022'
+);
+
+
+
+
+INSERT INTO `first_runs_year_21_22` VALUES (1,'ellie',6.18,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (2,'keith',4.8,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (3,'lawrence',6.08,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (4,'sean',7.68,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (5,'wade',6.42,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (6,'noah',5.9,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (7,'vaudree',5.03,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (8,'nick',5.23,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (9,'hayden',7.47,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (10,'zach j',5.15,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (11,'marshall',5.57,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (12,'cole',6.4,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (13,'elias',4.98,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (14,'akeem',21.92,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (15,'luke',5.38,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (16,'cam',5.9,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (17,'zach w',5.38,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (18,'addi',6.51,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (19,'bin',4.87,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (20,'caleb',4.93,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (21,'george',5.33,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (22,'mallory',6.8,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (23,'quay',4.87,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (24,'clare',5.9,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (25,'solo',5.66,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (26,'bradley',5.64,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (27,'carson',5.22,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (28,'sincere',5.69,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (29,'maddox',5.15,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (30,'joe',5.58,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (31,'anthony',5.17,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (32,'paul',5.46,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (33,'olivia',6.63,'2022');
+INSERT INTO `first_runs_year_21_22` VALUES (34,'alyssa',6.08,'2022');
+
+
+
+
+CREATE TABLE `subsequent_runs_year_21_22` (
+	`subsequent_run_id`	INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	`student_id`	INTEGER NOT NULL,
+	`run_time`	REAL,
+	`the_date`	TEXT NOT NULL DEFAULT '2022',
+	FOREIGN KEY(`student_id`) REFERENCES `first_runs_year_21_22`(`student_id`)
+);
+
+
+
+
+set foreign_key_checks=0;
+
+
+
+
+INSERT INTO `subsequent_runs_year_21_22` VALUES (1,27,5.43,'2022');
+INSERT INTO `subsequent_runs_year_21_22` VALUES (2,27,5.17,'2022');
+INSERT INTO `subsequent_runs_year_21_22` VALUES (3,7,4.63,'2022');
+INSERT INTO `subsequent_runs_year_21_22` VALUES (4,4,6.75,'2022');
+INSERT INTO `subsequent_runs_year_21_22` VALUES (5,26,5.48,'2022');
+INSERT INTO `subsequent_runs_year_21_22` VALUES (6,2,4.7,'2022');
+INSERT INTO `subsequent_runs_year_21_22` VALUES (7,2,4.73,'2022');
+INSERT INTO `subsequent_runs_year_21_22` VALUES (8,22,6.5,'2022');
+INSERT INTO `subsequent_runs_year_21_22` VALUES (9,25,5.8,'2022');
+INSERT INTO `subsequent_runs_year_21_22` VALUES (10,6,5.4,'2022');
+INSERT INTO `subsequent_runs_year_21_22` VALUES (11,29,5.15,'2022');
+INSERT INTO `subsequent_runs_year_21_22` VALUES (12,29,5.06,'2022');
+INSERT INTO `subsequent_runs_year_21_22` VALUES (13,33,6.15,'2022');
+INSERT INTO `subsequent_runs_year_21_22` VALUES (14,34,6.1,'2022');
+INSERT INTO `subsequent_runs_year_21_22` VALUES (15,32,5.42,'2022');
+INSERT INTO `subsequent_runs_year_21_22` VALUES (16,32,5.36,'2022');
+INSERT INTO `subsequent_runs_year_21_22` VALUES (17,30,5.44,'2022');
+INSERT INTO `subsequent_runs_year_21_22` VALUES (18,31,5.03,'2022');
+INSERT INTO `subsequent_runs_year_21_22` VALUES (19,31,5.19,'2022');
+
+
+
+
+set foreign_key_checks=1;
